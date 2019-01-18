@@ -523,6 +523,7 @@ OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/
 drop table if exists store_returns;
 create table store_returns
 using column
+OPTIONS(PARTITION_BY 'sr_item_sk', COLOCATE_WITH 'inventory')
 as (select * from store_returns_text_staging)
 ;
 drop table if exists store_returns_text_staging;
@@ -532,7 +533,7 @@ create external table store_sales_text_staging
 (
     ss_sold_date_sk           int,
     ss_sold_time_sk           int,
-    ss_item_sk                bigint,
+    ss_item_sk                int,
     ss_customer_sk            int,
     ss_cdemo_sk               int,
     ss_hdemo_sk               int,
