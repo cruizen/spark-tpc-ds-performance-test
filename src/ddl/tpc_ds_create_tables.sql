@@ -38,7 +38,7 @@ create external table call_center_text_staging
 )
 USING csv
 -- USING org.apache.spark.sql.execution.datasources.csv.CSVFileFormat
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/call_center.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/call_center.dat')
 ;
 drop table if exists call_center;
 create table call_center
@@ -61,7 +61,7 @@ create external table catalog_page_text_staging
     cp_type                   string
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/catalog_page.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/catalog_page.dat')
 ;
 drop table if exists catalog_page;
 create table catalog_page
@@ -102,7 +102,7 @@ create external table catalog_returns_text_staging
     cr_net_loss               double
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/catalog_returns.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/catalog_returns.dat')
 ;
 drop table if exists catalog_returns;
 create table catalog_returns
@@ -151,7 +151,7 @@ create external table catalog_sales_text_staging
     cs_net_profit             double
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/catalog_sales.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/catalog_sales.dat')
 ;
 drop table if exists catalog_sales;
 create table catalog_sales
@@ -183,7 +183,7 @@ create external table customer_text_staging
     c_last_review_date        string
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/customer.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/customer.dat')
 ;
 drop table if exists customer;
 create table customer
@@ -211,7 +211,7 @@ create external table customer_address_text_staging
     ca_location_type          string
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/customer_address.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/customer_address.dat')
 ;
 drop table if exists customer_address;
 create table customer_address
@@ -234,7 +234,7 @@ create external table customer_demographics_text_staging
     cd_dep_college_count      int
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/customer_demographics.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/customer_demographics.dat')
 ;
 drop table if exists customer_demographics;
 create table customer_demographics
@@ -276,7 +276,7 @@ create external table date_dim_text_staging
     d_current_year            string
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/date_dim.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/date_dim.dat')
 ;
 drop table if exists date_dim;
 create table date_dim
@@ -295,7 +295,7 @@ create external table household_demographics_text_staging
     hd_vehicle_count          int
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/household_demographics.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/household_demographics.dat')
 ;
 drop table if exists household_demographics;
 create table household_demographics
@@ -312,7 +312,7 @@ create external table income_band_text_staging
     ib_upper_bound            int
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/income_band.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/income_band.dat')
 ;
 drop table if exists income_band;
 create table income_band
@@ -330,7 +330,7 @@ create external table inventory_text_staging
     inv_quantity_on_hand      bigint
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/inventory.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/inventory.dat')
 ;
 drop table if exists inventory;
 create table inventory
@@ -366,7 +366,7 @@ create external table item_text_staging
     i_product_name            string
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/item.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/item.dat')
 ;
 drop table if exists item;
 create table item
@@ -399,7 +399,7 @@ create external table promotion_text_staging
     p_discount_active         string
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/promotion.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/promotion.dat')
 ;
 drop table if exists promotion;
 create table promotion
@@ -416,7 +416,7 @@ create external table reason_text_staging
     r_reason_desc             string
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/reason.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/reason.dat')
 ;
 drop table if exists reason;
 create table reason
@@ -436,7 +436,7 @@ create external table ship_mode_text_staging
     sm_contract               string
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/ship_mode.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/ship_mode.dat')
 ;
 drop table if exists ship_mode;
 create table ship_mode
@@ -479,7 +479,7 @@ create external table store_text_staging
     s_tax_precentage          double
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/store.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/store.dat')
 ;
 drop table if exists store;
 create table store
@@ -513,7 +513,7 @@ create external table store_returns_text_staging
     sr_net_loss               double
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/store_returns.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/store_returns.dat')
 ;
 drop table if exists store_returns;
 create table store_returns
@@ -550,7 +550,7 @@ create external table store_sales_text_staging
     ss_net_profit             double
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/store_sales.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/store_sales.dat')
 ;
 drop table if exists store_sales;
 create table store_sales
@@ -574,7 +574,7 @@ create external table time_dim_text_staging
     t_meal_time               string
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/time_dim.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/time_dim.dat')
 ;
 drop table if exists time_dim;
 create table time_dim
@@ -602,7 +602,7 @@ create external table warehouse_text_staging
     w_gmt_offset              double
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/warehouse.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/warehouse.dat')
 ;
 drop table if exists warehouse;
 create table warehouse
@@ -630,7 +630,7 @@ create external table web_page_text_staging
     wp_max_ad_count           int
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/web_page.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/web_page.dat')
 ;
 drop table if exists web_page;
 create table web_page
@@ -668,7 +668,7 @@ create external table web_returns_text_staging
     wr_net_loss               double
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/web_returns.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/web_returns.dat')
 ;
 drop table if exists web_returns;
 create table web_returns
@@ -716,7 +716,7 @@ create external table web_sales_text_staging
     ws_net_profit             double
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/web_sales.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/web_sales.dat')
 ;
 drop table if exists web_sales;
 create table web_sales
@@ -756,7 +756,7 @@ create external table web_site_text_staging
     web_tax_percentage        double
 )
 USING csv
-OPTIONS(header 'false', delimiter '|', path '/home/jramnarayan/data/tpc_ds/10gb/web_site.dat')
+OPTIONS(header 'false', delimiter '|', path '${TPCDS_GENDATA_DIR}/web_site.dat')
 ;
 drop table if exists web_site;
 create table web_site
